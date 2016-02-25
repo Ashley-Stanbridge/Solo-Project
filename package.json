@@ -1,0 +1,23 @@
+{
+  "name": "ashleystanbridge",
+  "version": "1.0.0",
+  "description": "personal project",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify ./Public -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashley-Stanbridge/Solo-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ashley-Stanbridge/Solo-Project/issues"
+  },
+  "homepage": "https://github.com/Ashley-Stanbridge/Solo-Project#readme",
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "watchify": "^3.7.0"
+  }
+}
