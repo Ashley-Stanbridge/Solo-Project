@@ -1,0 +1,13 @@
+{
+    "blogs": 
+    [{
+        "title": "Andi Buchanan",
+        "id": "1",
+        "post": "this is da blog"
+    },
+    {
+        "title": "Nick Buchanan",
+        "id": "2",
+        "post": "this is da blog"
+    }]
+}
