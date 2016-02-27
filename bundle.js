@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module '/Users/ashleystanbridge/Desktop/W o r k  S p a c e/Practice/Solo-Project/Public/index.js' from '/Users/ashleystanbridge/Desktop/W o r k  S p a c e/Practice/Solo-Project'");
