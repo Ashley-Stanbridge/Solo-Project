@@ -25,14 +25,17 @@ exports = module.exports = function (app) {
     res.render('projects');
 });
 
+  app.get('/blogPost', function (req, res) {
+    console.log(req.query)
+    res.render('blogPost', {"post": req.query})
+});
+
 
 app.get('/blog', function (req, res) {
-    console.log(req.query.blogid)
     readFilePromise(blogPath)
       .then(function (data) {
         var blogs = JSON.parse(data).blogs
         // var blogs = data
-        console.log(blogs)
         res.render('blog', {blog: blogs})
       .error(function (err) {
         console.log('ERROR')
@@ -43,47 +46,39 @@ app.get('/blog', function (req, res) {
 
 app.get('/blog', function (req, res) {
   // if (req.query) 
-  console.log(req.query)
    res.render('blog', {ID: blogs})
-    // console.log('its a query')
-    // console.log(req.query)
   })
 
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-// app.post('/blog', urlencodedParser ,function (req, res) {
-//   var inputData = JSON.stringify(req.body)
-//   console.log("This is the REQ BODY", req.body)
+app.post('/blog', urlencodedParser ,function (req, res) {
+  var inputData = JSON.stringify(req.body)
+  console.log("This is the REQ BODY", req.body)
 
-//   readFilePromise(blogPath)
-//   .then( function (data) {
-//    console.log('i have read the file')
-//     var jsonObject = JSON.parse(data)
-//    // console.log(req.query)
+  readFilePromise(blogPath)
+  .then( function (data) {
+    var jsonObject = JSON.parse(data)
 
-//     var newID = returnId()
-//     var newPost = {
-//       "title" : "ashley town",
-//       "post": "herrrrrre's ashley",
-//       "ID": newID
-//     }
-//     console('new post', newPost)
-
-//     jsonObject.blogs.push(newPost)
-//     console.log(returnId())
+    var newID = returnId()
+    var newPost = {
+      "title" : "ashley town",
+      "post": "herrrrrre's ashley",
+      "ID": newID
+    }
+    jsonObject.blogs.push(newPost)
        
 
-//     writeFilePromise(blogPath, JSON.stringify(jsonObject))
-//     .then(function () {
-//       res.end('POST/blogPath end')
-//       .error(function (err) {
-//         console.log('ERROR! ERROR!! ERROR!!!')
-//       })
-//     })
-//   })
-// })
+    writeFilePromise(blogPath, JSON.stringify(jsonObject))
+    .then(function () {
+      res.end('POST/blogPath end')
+      .error(function (err) {
+        console.log('ERROR! ERROR!! ERROR!!!')
+      })
+    })
+  })
+})
 
 
     app.get('/gallery', function (req, res) {

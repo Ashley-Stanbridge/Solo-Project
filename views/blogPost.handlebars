@@ -1,12 +1,11 @@
-<div class="blogDiv">
-<article id="{{.id}}">
-  <form>
-    <input type="text" id="blogid" name="blogid">
-    <input type="submit" id="submit" name="submit">
-</form>
+<div class="blogPostDiv">
 <h1>
-{{.title}}
+{{post.title}}
 </h1>
-  {{.post}}
-</a>
+<article> 
+<div class="textDiv">
+  {{post.post}}
+  </div>
+</article>
+
 </div>
