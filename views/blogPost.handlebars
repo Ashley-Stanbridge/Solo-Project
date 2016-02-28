@@ -1,8 +1,12 @@
-{{#each blog}}
-<div class="mainPost">
-<article>
-  <h1>
-  </h1>
-  <p>
-  </p>
-</article>
+<div class="blogDiv">
+<article id="{{.id}}">
+  <form>
+    <input type="text" id="blogid" name="blogid">
+    <input type="submit" id="submit" name="submit">
+</form>
+<h1>
+{{.title}}
+</h1>
+  {{.post}}
+</a>
+</div>

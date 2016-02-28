@@ -27,7 +27,7 @@ exports = module.exports = function (app) {
 
 
 app.get('/blog', function (req, res) {
-    console.log("FUCK")
+    console.log(req.query.blogid)
     readFilePromise(blogPath)
       .then(function (data) {
         var blogs = JSON.parse(data).blogs
@@ -39,6 +39,16 @@ app.get('/blog', function (req, res) {
       })
     })
 })
+
+
+app.get('/blog', function (req, res) {
+  // if (req.query) 
+  console.log(req.query)
+   res.render('blog', {ID: blogs})
+    // console.log('its a query')
+    // console.log(req.query)
+  })
+
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
