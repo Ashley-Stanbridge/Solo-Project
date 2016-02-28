@@ -1,5 +1,22 @@
 article {
-  background-color: red; 
+  height: 200px;
+  background-color: lightgrey;
+  border: 2px solid;
+  margin-top: 50px;
+
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 35px 5px rgba(0,0,0,0.43);
+  -moz-box-shadow: 5px 5px 35px 5px rgba(0,0,0,0.43);
+  box-shadow: 5px 5px 35px 5px rgba(0,0,0,0.43);
+}
+
+.blogDiv {
+  max-width: 400px;
+  text-align: center;
+}
+
+.blogDiv a {
+    text-decoration: none;
 }
 
 body {

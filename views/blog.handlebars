@@ -1,8 +1,14 @@
 {{#each blog}}
+<div class="blogDiv">
 <article id="{{this.id}}">
+  <form>
+    <input type="text" id="blogid" name="blogid">
+    <input type="submit" id="submit" name="submit"
+</form>
 <h1>
 {{this.title}}
 </h1>
   {{this.post}}
-</article>
+</a>
+</div>
 {{/each}}
