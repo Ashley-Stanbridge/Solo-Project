@@ -1,64 +1,65 @@
-var exphbs  = require('express-handlebars');
-var superagent = require('superagent')
-var readFilePromise = require('./readFilePromise')
-var writeFilePromise = require('./writeFilePromise')
-var bodyParser = require('body-parser')
-var returnId = require('./return-id')
-var path = require('path')
-var fs = require('fs')
+'use strict'
 
 
-exports = module.exports = function (app) {
+import readFilePromise from './readFilePromise'
+import writeFilePromise from './writeFilePromise'
+import exphbs from 'express-handlebars'
+import bodyParser from 'body-parser'
+import superagent from 'superagent'
+import returnId from './return-id'
+import path from 'path'
+import fs from'fs'
 
-  var blogPath = path.join(__dirname, '../data/db.json')
 
-  app.get('/', function (req, res) {
-    res.render('home');
-  });
+exports = module.exports =  (app) => {
 
+  let blogPath = path.join(__dirname, '../data/db.json')
 
-  app.get('/portfolio', function (req, res) {
-    res.render('portfolio');
-});
-
-  app.get('/projects', function (req, res) {
-    res.render('projects');
-});
-
-  app.get('/blogPost', function (req, res) {
-    console.log(req.query)
-    res.render('blogPost', {"post": req.query})
+app.get('/', (req, res) => {
+  res.render('home');
 });
 
 
-app.get('/blog', function (req, res) {
-    readFilePromise(blogPath)
-      .then(function (data) {
-        var blogs = JSON.parse(data).blogs
-        // var blogs = data
+app.get('/portfolio', (req, res) => {
+  res.render('portfolio');
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects');
+});
+
+app.get('/blogPost', (req, res) => {
+  console.log(req.query)
+  res.render('blogPost', {"post": req.query})
+});
+
+
+app.get('/blog', (req, res) => {
+  readFilePromise(blogPath)
+    .then( (data) => {
+      var blogs = JSON.parse(data).blogs
         res.render('blog', {blog: blogs})
-      .error(function (err) {
+      .error( (err) => {
         console.log('ERROR')
       })
     })
 })
 
 
-app.get('/blog', function (req, res) {
-  // if (req.query) 
+app.get('/blog', (req, res) => {
    res.render('blog', {ID: blogs})
-  })
+})
 
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-app.post('/blog', urlencodedParser ,function (req, res) {
+app.post('/blog', urlencodedParser , (req, res) => {
   var inputData = JSON.stringify(req.body)
   console.log("This is the REQ BODY", req.body)
 
   readFilePromise(blogPath)
-  .then( function (data) {
+  .then( (data) => {
     var jsonObject = JSON.parse(data)
 
     var newID = returnId()
@@ -71,9 +72,9 @@ app.post('/blog', urlencodedParser ,function (req, res) {
        
 
     writeFilePromise(blogPath, JSON.stringify(jsonObject))
-    .then(function () {
+    .then( () => {
       res.end('POST/blogPath end')
-      .error(function (err) {
+      .error( (err) => {
         console.log('ERROR! ERROR!! ERROR!!!')
       })
     })
@@ -81,8 +82,8 @@ app.post('/blog', urlencodedParser ,function (req, res) {
 })
 
 
-    app.get('/gallery', function (req, res) {
-    res.render('gallery');
+app.get('/gallery', (req, res) => {
+  res.render('gallery');
 })
 
 //Add new routes here

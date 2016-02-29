@@ -1,12 +1,3 @@
-/*.blogPostDiv {
-  max-width: 80%;
-  text-align: center;
-  border: 1px solid;
-  border-radius: 20px;
-  background-color: grey;
-}
-
-*/
 
 .blogPostDiv h1 {
 font-size: 5vw;
@@ -15,8 +6,6 @@ font-weight: lighter;
 text-align: center;
 margin: 5px;
 }
-
-blogPort
 
 
 .textDiv {
@@ -32,7 +21,6 @@ blogPort
 }
 
 
-
 article {
   height: 200px;
   background-color: lightgrey;
@@ -45,18 +33,22 @@ article {
   box-shadow: 5px 5px 35px 5px rgba(0,0,0,0.43);
 }
 
+
 .blogDiv {
   max-width: 400px;
   text-align: center;
 }
 
+
 .blogDiv a {
     text-decoration: none;
 }
 
+
 body {
   margin: 0;
 }
+
 
 .pushmenu { /*this is the nav*/
   background: #3c3933;
@@ -68,6 +60,7 @@ body {
   position:fixed;
 }
 
+
 .pushmenu h3 {
   color: #cbbfad;
   font-size: 14px;
@@ -77,6 +70,7 @@ body {
   background: #282522;    
   height: 16px;
 }
+
 
 .pushmenu a {
   display: block; /* drops the nav vertically*/
@@ -89,23 +83,28 @@ body {
   padding: 14px;
 }
 
+
 .pushmenu a:hover {
   background:#cccccc;
 }
+
 
 .pushmenu a:active {
   background: #454f5c;
   color: #fff;
 }
 
+
 .pushmenu-left {
   left: -240px;
 
 }
 
+
 .pushmenu-left.pushmenu-open {
   left: 0;
 }
+
 
 .pushmenu-push {
   overflow-x: hidden;
@@ -113,9 +112,11 @@ body {
   left: 0;
 }
 
+
 .pushmenu-push-toright {
   left: 240px;
 }
+
 
 /*Transition*/
 .pushmenu, .pushmenu-push {
@@ -123,6 +124,7 @@ body {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;  
 }
+
 
 #nav_list {
   background: url(http://www.onlywebpro.com/demo/jquery/icon_nav.png) no-repeat left top;
@@ -132,9 +134,11 @@ body {
   text-indent: -99999em;
 }
 
+
 nav-list.active {
   background-position: -33px top;
 }
+
 
  .buttonset {
       background: #CBCCCC;
@@ -146,240 +150,3 @@ nav-list.active {
    font-family: Arial, Helvetica, sans-serif;
    padding: 10px 20px;
  }
-
-
-/*newold*/
-
-/*body {
-  margin: o;
-}
-
-
-.pushmenu {
-  background: #3c3933;
-  font-family: Arial, Helvetics, sans-serif;
-  width: 230px;
-  height: 100%;
-  top: 0;
-  z-index: 1000;
-  position: fixed;
-}
-
-
-.pushmenu h3 {
-  color: #cbbfad;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 15px 20px;
-  margin: 0;
-  background: #282522;    
-  height: 16px;
-}
-
-
-.pushmenu a {
-  display: block; /* drops the nav vertically*/
-/*  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  border-top: 1px solid #56544e;
-  border-bottom: 1px solid #312e2a;
-  padding: 14px;
-}
-
-
-.pushmenu a:active {
-  background: #454f5c;
-}
-
-
-.pushmenu a:active {
-  left: -240px;
-}
-
-.pushmenu-left.pushmenu-open {
-  left: 0;
-}
-
-.pushmenu-push-toright {
-  left: 240px;
-}
-
-.pushmenu, .pushmenu-push {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;  
-}
-
-#nav_list {
-  background: url(http://www.onlywebpro.com/demo/jquery/icon_nav.png) no-repeat left top;
-  cursor: pointer;
-  height: 27px;
-  width: 33px;
-  text-indent: -99999em;
-}
-*/
-
-
-/*old*/
-
-/*body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-
-  color: #fff;
-  background-color: #232629;
-}
-
-#menu {
-  position: fixed;
-  top: 0;
-  left: -300px;
-
-  width: 300px;
-  height: 100%;
-  padding: 50px 300px;
-
-  -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-             box-sizing: border-box;
-
-  -webkit-transition: all .3s ease-in;
-  -moz-transition: all .3s ease-in;
-  -o-transition: all .3s ease-in;
-   transition: all .3s ease-in;
-   
-    text-align: center;
-    background-color: #fff;
-}
-
-#menu .push-menu {
-  height: 51px;
-
-  font-style: 70px;
-  font-weight: 900;
-  line-height: .6;
-
-  color: #ddd;
-}
-
-#menu ul {
-  padding: 0;
-  margin-top: 30px;
-}
-
-#menu  ul li a{
-display: block;
-
-font-weight: 900;
-line-height: 50px;
-
--webkit-transition: all .3s ease;
--moz-transition: all .3s ease;
--o-transition: all .3s ease;
-transition: all .3s ease;
-text-decoration: none;
-text-transform: uppercase;
-
-color: #232629;
-border-top: 1px solid #eee;
-
-}
-
-
-#menu ul li:last-child a {
-  border-bottom: 1px solid #eee;
-}
-
-body.open #menu {
-  left: 0;
-}
-
-
-/*Main Page*/
-
-
-/*.page-wrap {
-   
-    padding: 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-    -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-    transition: all .3s ease-in;
-}
-
-body.open .page-wrap {
-  margin-left: 300px;
-}
-
-/*Menu Icon*/
-
-/*button:focus {
-  outline: none;
-}
-
-#toggle-menu {
-  position: relative;
-
-width: 51px;
-height: 51px;
-
-cursor: pointer;
-
-border: none;
--webkit-border-radius: 50px;
--moz-border-radius: 50px;
-
-border-radius: 50px;
-background: #fff;
-}
-
-#toggle-menu:before,
-#toggle-menu:after: {
-  position: absolute;
-
-  content: " ";
-  content: " ";
-
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-
-  background-color: #232629;
-}
-
-#toggle-menu:before {
-  top: 12px;
-  left: 25px;
-
-  width: 1px;
-  height: 27px;
-}
-
-#toggle-menu:after {
-  top: 25px;
-  left: 12px;
-
-  width: 27px;
-  height: 1px;
-}
-
-body.open button#toggle-menu:before,
-body.open button#toggle-menu:after {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.container {
-  max-width: 600px;
-  min-width:  200px;
-  margin: 0 auto;
-}*/

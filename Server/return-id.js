@@ -1,7 +1,7 @@
-rid = require('readable-id')
+import rid from 'readable-id'
 
 
-module.exports = function() {
+exports = module.export = () => {
   id = shortid.generate()
   adjectiveIndex = Math.round(Math.random() * adjectives.length)
   nounIndex = Math.round(Math.random() * nouns.length)

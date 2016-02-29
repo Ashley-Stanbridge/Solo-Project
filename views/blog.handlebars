@@ -1,16 +1,15 @@
 {{#each blog}}
 <div class="blogDiv">
-<article id="{{this.id}}">
-<h1>
-{{this.title}}
-</h1>
+  <article id="{{this.id}}">
+    <h1>
+      {{this.title}}
+    </h1>
   {{this.post}}
-</a>
   <form action="/blogPost" method="GET">
     <input type="hidden" name="title" value="{{this.title}}"/>
     <input type="hidden" name="post" value="{{this.post}}"/>
     <input type="hidden" name="id" value="{{this.id}}"/>
     <input type="submit" id="submit">
-</form>
+  </form>
 </div>
 {{/each}}
